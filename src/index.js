@@ -1,13 +1,21 @@
-import React from 'react';
+
+import React, { createContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import {Songs} from './musicApp/Data/data';
+import MusicApp from './musicApp/musicapp';
 import reportWebVitals from './reportWebVitals';
+
+export const SongProvider = createContext();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+  
+    <SongProvider.Provider value={{Songs}}>
+    <MusicApp />
+    </SongProvider.Provider>
+    
   </React.StrictMode>
 );
 
